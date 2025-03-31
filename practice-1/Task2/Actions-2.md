@@ -1,5 +1,7 @@
 <!-- @format -->
 
+# Завдання 2
+
 ## РОБОТА З DEVNET
 
 1. Підключіться до devnet
@@ -16,10 +18,12 @@
 
 ## Або скористайтеся краном Solana: [https://faucet.solana.com/](https://faucet.solana.com/)
 
-## Або використайте функцію airdropIfRequired
+## Або використайте send-sol.ts
+
+## npx esrun send-sol.ts
 
 4. Перевірте баланс інших людей
 
-## Оновіть check-balance.ts, щоб перевірити баланс іншого користувача
+## Оновіть check-balance.ts
 
 ## npx esrun check-balance.ts
