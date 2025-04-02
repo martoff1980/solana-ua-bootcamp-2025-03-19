@@ -17,24 +17,16 @@ const connection = new Connection(clusterApiUrl('devnet'));
 
 console.log(`🔑 Our pubic key is: ${sender.publicKey.toBase58()}`);
 
-onst tokenMintAccount = new PublicKey(
-  "Address that create-token-mint.tx created for you"
-);
-const recipient = new PublicKey("CHOOSE A RECIPIENT");
+// create a token account for the recipient
+const tokenMintAccount = new PublicKey('BYeSuB2PGWQuYpc5UvzYDzTSis6PUUx2i8twdotnNZdJ');
+// recipient address
+const recipient = new PublicKey('AnJqC4JBzFFZsDFnT11u528yEZnmKMb75EaP8kwV8b7A');
 
-const tokenAccount = await getOrCreateAssociatedTokenAccount(
-  connection,
-  sender,
-  tokenMintAccount,
-  recipient
-);
+const tokenAccount = await getOrCreateAssociatedTokenAccount(connection, sender, tokenMintAccount, recipient);
 
+// Token Account: GQRgeaTEbRMzPqzvtzJT1DZRS8oiqH2ETPiwXBxEkDxG
 console.log(`Token Account: ${tokenAccount.address.toBase58()}`);
-
-const link = getExplorerLink(
-  "address",
-  tokenAccount.address.toBase58(),
-  "devnet"
-);
+/*Created token account: https://explorer.solana.com/address/GQRgeaTEbRMzPqzvtzJT1DZRS8oiqH2ETPiwXBxEkDxG?cluster=devnet8 */
+const link = getExplorerLink('address', tokenAccount.address.toBase58(), 'devnet');
 
 console.log(`✅ Created token account: ${link}`);
